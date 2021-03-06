@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+$primary: #DF2543;
+$dark: #253340;
+$family-primary: 'Barlow', sans-serif;
+
+
+@import 'bulma/bulma';
+
+* {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+#navbar {
+  top: 30px;
+
+  .navbar-brand {
+    background: $primary;
+    width: 64px;
+    height: 64px;
+    flex: content;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    img {
+      height: 50%;
+    }
+
+    &:hover {
+      background: $dark;
+    }
+  }
+
+  .navbar-item{
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    font-size: 12px;
+    a {
+      color: white;
+      &:hover{
+        color: $primary;
+      }
+    }
+  }
+}
+
+#home {
+
+  video {
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .lottie { 
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    object-fit: cover;
+  }
+
+  .container{
+    position: relative;
+  }
+
+  @media (min-width: $tablet) {
+    .inner{
+      padding: 0 50px;
+    }
+  }
+
+ 
+
+  
+
+  .title{
+    font-size: 62px;
+    line-height: 72px;
+    word-break: keep-all;
+    @media (max-width: $tablet) {
+      font-size: 45px;
+      line-height: 45px;
+    }
+  }
+
+  .subtitle {
+    margin-bottom: 30px;
+    background: $primary;
+    display: inline-block;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .more {
+    bottom: 100px;
+    display: flex;
+    width: 90px;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    transform: rotate(-90deg) translate(100px, -90px * 0.45 - 10px);
+    @media (max-width: $tablet) {
+      top: 10px;
+      z-index: 9;
+      position: absolute;
+      right: -100px;
+    }
+
+
+    span {
+      font-size: 10px;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .arrow{
+      background: url(./svgs/arrow.svg) center bottom / contain no-repeat;
+      transform: rotate(90deg);
+      width: 20px;
+      height: 30px;
+    }
+  }
+}
