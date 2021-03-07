@@ -3,6 +3,7 @@
 
 $primary: #DF2543;
 $dark: #253340;
+$link: $primary;
 $family-primary: 'Barlow', sans-serif;
 
 
@@ -75,10 +76,6 @@ $family-primary: 'Barlow', sans-serif;
     }
   }
 
- 
-
-  
-
   .title{
     font-size: 62px;
     line-height: 72px;
@@ -129,5 +126,28 @@ $family-primary: 'Barlow', sans-serif;
       width: 20px;
       height: 30px;
     }
+  }
+}
+
+#how-works{
+  p.subtitle {
+    text-align: left;
+    font-size: 48px;
+    line-height: 68px;
+    letter-spacing: 0px;
+    a {
+      color: $link;
+      font-weight: bold;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    font-size: 24px;
+  }
+  .lottie{
+    height: 500px;
   }
 }

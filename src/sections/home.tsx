@@ -30,8 +30,8 @@ export default function Home() {
       </div>
       {/*  */}
       <div className="hero-body">
-        <div className="container">
-          <div className="inner">
+        <div className="container ">
+          <div className="container is-max-widescreen">
             <h2 className="subtitle">Somos a Veron Tecnologia</h2>
             <h1 className="title is-1">
               Proteja a sua reputação <br />
