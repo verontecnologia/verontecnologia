@@ -48,13 +48,12 @@ const config: webpack.Configuration = {
         ],
       },
       {
-        test: /\.(mp4|svg|png|jpe?g|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
+        test: /\.(mp4|svg|png|jpe?g|gif|ico)$/,
+        use: [
+          {
+            loader: 'url-loader',
           },
-        },
+        ],
       },
     ],
   },

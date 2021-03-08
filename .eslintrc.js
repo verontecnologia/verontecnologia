@@ -33,6 +33,7 @@ module.exports = {
   },
   rules: {
     indent: ['error', 2],
+    'max-len': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

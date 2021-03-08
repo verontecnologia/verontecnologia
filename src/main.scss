@@ -48,7 +48,9 @@ $family-primary: 'Barlow', sans-serif;
   }
 }
 
-#home {
+
+.has-video-background {
+  position: relative;
 
   video {
     object-fit: cover;
@@ -57,7 +59,18 @@ $family-primary: 'Barlow', sans-serif;
     height: 100%;
     width: 100%;
   }
+}
 
+.has-img-cover {
+  background-size: cover;
+  height: 500px;
+  background-position: center;
+  @media (max-width: $tablet) {
+    height: 300px;
+  }
+}
+
+#home {
   .lottie { 
     width: 50vw;
     height: 100vh;
@@ -149,5 +162,48 @@ $family-primary: 'Barlow', sans-serif;
   }
   .lottie{
     height: 500px;
+  }
+}
+
+#protect {
+  .label {
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.5;
+    letter-spacing: 2.4px;
+  }
+}
+
+#privacity{
+  .inner{
+    @media (max-width: $tablet) {
+      padding: $gap;
+    }
+
+    p{
+      max-width: 80%;
+    }
+    &.is-left{
+      
+      @media (min-width: $tablet) {
+        padding-left: $container-offset;
+      }
+
+      @media (min-width: $desktop) {
+        padding-left: $container-offset * 2 + $gap * 2;
+      }
+    }
+
+    &.is-right{
+      @media (min-width: $tablet) {
+        padding-left: $container-offset;
+      }
+
+      @media (min-width: $desktop) {
+        padding-right: $container-offset * 2 + $gap * 2;
+      }
+      
+    }
+    
   }
 }

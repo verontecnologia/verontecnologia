@@ -18,7 +18,7 @@ export default function Home() {
 
 
   return (
-    <div id="home" className="hero is-fullheight is-dark">
+    <div id="home" className="hero has-video-background is-fullheight is-dark">
       <video muted autoPlay loop>
         <source src={video} type="video/mp4" />
       </video>
