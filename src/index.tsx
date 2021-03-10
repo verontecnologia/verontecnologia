@@ -1,11 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import l from '@loadable/component';
 import './main.scss';
+import { hydrate, render } from 'react-dom';
 
-const App = l(() => import('./App'));
+import App from './App';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement,
-);
+const rootElement = document.getElementById('root');
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}

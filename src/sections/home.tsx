@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import Lottie, { Options } from 'react-lottie';
+import { Options } from 'react-lottie';
+import load from '@loadable/component';
+
+const Lottie = load(() => import('react-lottie'));
 
 import * as animationData from '../animations/home.json';
+
 
 import video from '../videos/bg.mp4';
 

@@ -51,7 +51,10 @@ const config: webpack.Configuration = {
         test: /\.(mp4|svg|png|jpe?g|gif|ico)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+            },
           },
         ],
       },

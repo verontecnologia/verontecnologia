@@ -1,5 +1,5 @@
 {
-  "name": "desafio-jusbrasil",
+  "name": "verontecnologia-landing",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -11,7 +11,9 @@
     "test": "cross-env NODE_ENV=test jest --watch",
     "test:ci": "cross-env NODE_ENV=test jest",
     "test:coverage": "cross-env NODE_ENV=test jest --coverage",
-    "clear": "rm -rf ./build"
+    "clear": "rm -rf ./build",
+    "prebuild": "npm run clear",
+    "postbuild": "react-snap"
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",
@@ -72,6 +74,7 @@
     "mock-apollo-client": "^1.0.0",
     "react-hot-loader": "^4.13.0",
     "react-refresh": "^0.9.0",
+    "react-snap": "^1.23.0",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",

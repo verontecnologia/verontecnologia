@@ -1,14 +1,16 @@
 import React from 'react';
-
-import Home from './sections/home';
-import Navbar from './sections/navbar';
-import HowWorks from './sections/how-works';
-import Protect from './sections/protect';
-import Steps from './sections/steps';
-import Quote from './sections/quote';
-import Privacity from './sections/privacity';
+import load from '@loadable/component';
 
 import fav from './svgs/favicon.ico';
+
+const Home = load(() => import('./sections/home'));
+const Navbar = load(() => import('./sections/navbar'));
+const HowWorks = load(() => import('./sections/how-works'));
+const Protect = load(() => import('./sections/protect'));
+const Steps = load(() => import('./sections/steps'));
+const Quote = load(() => import('./sections/quote'));
+const Privacity = load(() => import('./sections/privacity'));
+const Footer = load(() => import('./sections/footer'));
 
 const App = () => {
   React.useEffect(() => {
@@ -20,15 +22,18 @@ const App = () => {
     document.head.appendChild(favicon);
   }, []);
 
-  return [
-    <Navbar />,
-    <Home />,
-    <HowWorks />,
-    <Protect />,
-    <Steps />,
-    <Quote />,
-    <Privacity />,
-  ];
+  return (
+    <>
+      <Navbar />
+      <Home />
+      <HowWorks />
+      <Protect />
+      <Steps />
+      <Quote />
+      <Privacity />
+      <Footer />
+    </>
+  );
 };
 
 export default App;

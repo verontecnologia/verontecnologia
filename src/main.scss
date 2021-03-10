@@ -48,6 +48,9 @@ $family-primary: 'Barlow', sans-serif;
   }
 }
 
+.is-spaced {
+  letter-spacing: 2.4px;
+}
 
 .has-video-background {
   position: relative;
@@ -174,7 +177,7 @@ $family-primary: 'Barlow', sans-serif;
   }
 }
 
-#privacity{
+.dual-block{
   .inner{
     @media (max-width: $tablet) {
       padding: $gap;
@@ -206,4 +209,26 @@ $family-primary: 'Barlow', sans-serif;
     }
     
   }
+}
+
+#contact{
+  .button{
+    letter-spacing: 2.4px;
+    font-size: 12px;
+    height: 65px;
+    padding: 0 30px;
+    border-radius: 0;
+    font-weight: bold;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.bg-footer{
+  content: "";
+  display: block;
+  height: 140px;
+  width: 100%;
+  background: transparent url('./svgs/bg-footer.svg') top center / 100% no-repeat padding-box;
 }

@@ -11,16 +11,16 @@ export default function Navbar() {
         <div className="navbar-menu">
           <div className="navbar-end">
             <div className="navbar-item">
-              <a href="#sobre">Sobre nós</a>
+              <a href="#about">Sobre nós</a>
             </div>
             <div className="navbar-item">
-              <a href="#como-funciona">Como funciona</a>
+              <a href="#how-works">Como funciona</a>
             </div>
             <div className="navbar-item">
-              <a href="#time">Nosso time</a>
+              <a href="#team">Nosso time</a>
             </div>
             <div className="navbar-item">
-              <a href="#contato">Contato</a>
+              <a href="#contact">Contato</a>
             </div>
           </div>
         </div>
