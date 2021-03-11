@@ -1,0 +1,333 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+$primary: #DF2543;
+$dark: #253340;
+$link: $primary;
+$family-primary: 'Barlow', sans-serif;
+
+
+@import 'bulma/bulma';
+
+* {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root{
+  overflow-x: hidden;
+}
+
+#navbar {
+  top: 30px;
+
+  @media (max-width: $desktop) {
+    top: 25px;
+    .navbar-burger{
+      position: absolute;
+      right: 30px;
+      color: #DF2543;
+    }
+    .navbar-item a {
+      color: $dark !important;
+      font-size: 20px;
+    }
+  }
+
+  .navbar-brand {
+    background: $primary;
+    width: 64px;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    img {
+      height: 50%;
+    }
+
+    &:hover {
+      background: $dark;
+    }
+  }
+
+  .navbar-item{ 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    font-size: 12px;
+    a {
+      color: white;
+      &:hover{
+        color: $primary;
+      }
+    }
+  }
+}
+
+.is-spaced {
+  letter-spacing: 2.4px;
+}
+
+.has-video-background {
+  position: relative;
+
+  video {
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.has-img-cover {
+  background-size: cover;
+  height: 500px;
+  background-position: center;
+  @media (max-width: $tablet) {
+    height: 300px;
+  }
+}
+
+#home {
+  .lottie { 
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    object-fit: cover;
+  }
+
+  .container{
+    position: relative;
+  }
+
+  @media (min-width: $tablet) {
+    .inner{
+      padding: 0 50px;
+    }
+  }
+
+  .title{
+    font-size: 62px;
+    line-height: 72px;
+    word-break: keep-all;
+    @media (max-width: $tablet) {
+      font-size: 45px;
+      line-height: 45px;
+    }
+  }
+
+  .subtitle {
+    margin-bottom: 30px;
+    background: $primary;
+    display: inline-block;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .more {
+    bottom: 100px;
+    display: flex;
+    width: 90px;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    transform: rotate(-90deg) translate(100px, -90px * 0.45 - 10px);
+    @media (max-width: $tablet) {
+      top: 10px;
+      z-index: 9;
+      position: absolute;
+      right: auto;
+      left: 40px;
+    }
+
+
+    span {
+      font-size: 10px;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .arrow{
+      background: url(./svgs/arrow.svg) center bottom / contain no-repeat;
+      transform: rotate(90deg);
+      width: 20px;
+      height: 30px;
+    }
+  }
+}
+
+#how-works{
+  p.subtitle {
+    text-align: left;
+    font-size: 48px;
+    line-height: 68px;
+    letter-spacing: 0px;
+    a {
+      color: $link;
+      font-weight: bold;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p {
+    font-size: 24px;
+  }
+  .lottie{
+    height: 500px;
+  }
+}
+
+#protect {
+  .label {
+    text-transform: uppercase;
+    font-size: 14px;
+    opacity: 0.5;
+    letter-spacing: 2.4px;
+  }
+}
+
+.dual-block{
+  .inner{
+    @media (max-width: $tablet) {
+      padding: $gap;
+    }
+
+    p{
+      max-width: 80%;
+    }
+    &.is-left{
+      
+      @media (min-width: $tablet) {
+        padding-left: $container-offset;
+      }
+
+      @media (min-width: $desktop) {
+        padding-left: $container-offset * 2 + $gap * 2;
+      }
+    }
+
+    &.is-right{
+      @media (min-width: $tablet) {
+        padding-left: $container-offset;
+      }
+
+      @media (min-width: $desktop) {
+        padding-right: $container-offset * 2 + $gap * 2;
+      }
+      
+    }
+    
+  }
+}
+
+.button{
+  letter-spacing: 2.4px;
+  font-size: 12px;
+  height: 65px;
+  padding: 0 35px;
+  border-radius: 0;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.bg-footer{
+  content: "";
+  display: block;
+  height: 140px;
+  width: 100%;
+  background: transparent url('./svgs/bg-footer.svg') top center / 100% no-repeat padding-box;
+}
+
+.footer{ 
+  background-color: white;
+}
+
+#modal{
+  @media (max-width: $tablet) {
+    padding-top: 80px;
+    .title {
+      font-size: 20px;
+    }
+    .close {
+      top: 30px;
+      right: 30px
+    }
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  overflow-y: scroll;
+}
+
+.input {
+  height: 64px;
+  background: #ECECEC 0% 0% no-repeat padding-box;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  padding: 0 20px;
+}
+
+.textarea{
+  padding: 20px;
+  background: #ECECEC 0% 0% no-repeat padding-box;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  padding: 20px;
+}
+
+.close {
+  z-index: 999999;
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  height: 50px !important;
+  width: 50px !important;
+  background-color: transparent;
+  font-size: 50px;
+  border: none;
+  font-weight: lighter;
+  transform: rotate(45deg);
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  &::after, &::before {
+    content: "";
+    background: black;
+    position: absolute
+  }
+  &::after{
+    width: 100%;
+    height: 2px;
+  }
+  &::before{
+    width: 2px;
+    height: 100%;
+  }
+  &:focus{
+    border: none;
+    box-shadow: none;
+  }
+  &:hover {
+    outline: none;
+    &::after, &::before {
+      background: red;
+    }
+  }
+}
