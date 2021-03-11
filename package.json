@@ -13,7 +13,7 @@
     "test:coverage": "cross-env NODE_ENV=test jest --coverage",
     "clear": "rm -rf ./build",
     "prebuild": "npm run clear",
-    "postbuild": "react-snap"
+    "postbuild": "react-snap; cp ./public/CNAME ./build/CNAME"
   },
   "dependencies": {
     "@apollo/client": "^3.3.11",
