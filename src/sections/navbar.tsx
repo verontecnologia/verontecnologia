@@ -25,7 +25,7 @@ export default function Navbar({ setModal = (b:boolean) => {} }) {
             </a>
           </div>
           <div className="column" />
-          <div className="column is-3">
+          <div className="column is-3 is-hidden-mobile">
             <button type="button" onClick={() => setModal(true)} className="button is-dark is-fullwidth is-spaced is-uppercase">
               Vamos conversar?
             </button>
