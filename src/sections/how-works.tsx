@@ -43,7 +43,6 @@ export default function HowWorks() {
             </div>
             <div className="tile  is-parent is-6">
               <div className="lottie" ref={elRef}>
-                <h2>{observerEntry?.intersectionRatio}</h2>
                 <Lottie isPaused={observerEntry?.intersectionRatio < 0.9} options={animation} />
               </div>
             </div>

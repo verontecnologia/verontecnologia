@@ -1,16 +1,22 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useState } from 'react';
 import { Options } from 'react-lottie';
 import load from '@loadable/component';
 
-const Lottie = load(() => import('react-lottie'));
-
 import * as animationData from '../animations/home.json';
 
-
+import simbol from '../svgs/simbol-veron.svg';
 import video from '../videos/bg.mp4';
 
-export default function Home() {
-  const [animation, setAnimation] = useState({
+const Lottie = load(() => import('react-lottie'));
+
+export default function Home({ setModal = (b:boolean) => {} }) {
+  const [active, setActive] = React.useState(false);
+
+
+  const animation = {
     loop: false,
     autoplay: true,
     animationData,
@@ -18,7 +24,7 @@ export default function Home() {
       preserveAspectRatio: 'xMinYMax slice',
 
     },
-  } as Options);
+  } as Options;
 
 
   return (
@@ -31,6 +37,51 @@ export default function Home() {
         <Lottie
           options={animation}
         />
+      </div>
+
+      <div className="hero-head">
+        <nav id="navbar" className="navbar" style={{ background: 'transparent' }}>
+          <div className="container">
+            <div className="navbar-brand">
+              <a className="navbar-item">
+                <img src={simbol} alt="Logo" />
+              </a>
+              <a
+                onClick={() => setActive(!active)}
+                role="button"
+                className="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navbarBasicExample"
+              >
+                <span aria-hidden="true" />
+                <span aria-hidden="true" />
+                <span aria-hidden="true" />
+              </a>
+            </div>
+            <div className={`navbar-menu ${active && 'is-active'}`}>
+              <div className="navbar-end">
+                <div className="navbar-item">
+                  <a onClick={() => setActive(false)} href="#about">Sobre nós</a>
+                </div>
+                <div className="navbar-item">
+                  <a onClick={() => setActive(false)} href="#how-works">Como funciona</a>
+                </div>
+                <div className="navbar-item">
+                  <a onClick={() => setActive(false)} href="#team">Nosso time</a>
+                </div>
+                <div className="navbar-item">
+                  <a onClick={() => {
+                    setActive(false);
+                    setModal(true);
+                  }}
+                  >Contato
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
       {/*  */}
       <div className="hero-body">

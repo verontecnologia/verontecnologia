@@ -11,6 +11,7 @@ const Steps = load(() => import('./sections/steps'));
 const Quote = load(() => import('./sections/quote'));
 const Privacity = load(() => import('./sections/privacity'));
 const Footer = load(() => import('./sections/footer'));
+const Modal = load(() => import('./sections/modal'));
 
 const App = () => {
   React.useEffect(() => {
@@ -22,16 +23,19 @@ const App = () => {
     document.head.appendChild(favicon);
   }, []);
 
+  const [modal, setModal] = React.useState(false);
+
   return (
     <>
-      <Navbar />
-      <Home />
+      { !modal && <Navbar setModal={setModal} /> }
+      <Home setModal={setModal} />
       <HowWorks />
       <Protect />
       <Steps />
       <Quote />
-      <Privacity />
+      <Privacity setModal={setModal} />
       <Footer />
+      { modal && <Modal onClose={() => setModal((prev) => !prev)} /> }
     </>
   );
 };

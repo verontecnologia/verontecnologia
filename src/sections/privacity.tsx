@@ -24,7 +24,10 @@ function Layout({
   );
 
   const img = (
-    <div className="image column is-5 has-img-cover" style={{ backgroundImage: `url(${image})` }} />
+    <div className="column is-5">
+      <div className="image has-img-cover" style={{ backgroundImage: `url(${image})` }} />
+    </div>
+
   );
 
   return (
@@ -37,9 +40,29 @@ function Layout({
 }
 
 
-export default () => (
+export default ({ setModal = (b:boolean) => {} }) => (
   <>
+
     <Layout id="privacity" icon={iconPriv} image={imagePriv} title="Total Privacidade" descr={<>Garantimos 100% de privacidade e anonimato aos nossos clientes, durante todo o processo da Gestão de Reputação Online. Desde o momento da contratação até as etapas finais. Damos a certeza de que ninguém saberá que você nos contratou.</>} side="left" />
     <Layout id="team" icon={iconTime} image={imageTime} title="Nosso Time" descr={<>A nossa equipe conta com profissionais especializados que trabalham em conjunto com mais de um espectro qualitativo, atuando e possuindo expertise nas áreas de <b>Tecnologias da Informação, Judiciais, Estratégias Digitais, Engenharias de Softwares, e Desenvolvimentos de Algoritmos de Exclusão e Dissolução de Dados Segmentados.</b></>} side="right" />
+    <div id="contact" className="hero is-medium is-white">
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-multiline is-centered">
+            <div className="column is-8 has-text-centered">
+              <h1 className="title">Interessado em saber como está a sua reputação na internet? Solicite o seu diagnóstico gratuito agora mesmo!</h1>
+            </div>
+          </div>
+          <br />
+          <div className="columns is-centered">
+            <div className="column is-full-mobile is-half-tablet is-3-desktop">
+              <button onClick={() => setModal(true)} type="button" className="button is-primary is-fullwidth is-uppercase">
+                Entre em contato
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </>
 );

@@ -1,27 +1,34 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
+import React, { useEffect } from 'react';
 import simbol from '../svgs/simbol-veron.svg';
 
-export default function Navbar() {
+export default function Navbar({ setModal = (b:boolean) => {} }) {
+  const [active, setActive] = React.useState(false);
+  React.useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > window.innerHeight) {
+        setActive(true);
+      } else {
+        setActive(false);
+      }
+    });
+    return () => window.removeEventListener('scroll', () => {});
+  }, []);
   return (
-    <nav id="navbar" className="navbar is-fixed is-fixed-top" style={{ background: 'transparent' }}>
+    <nav id="navbar" className="navbar is-fixed-top" style={{ opacity: active ? 1 : 0, background: 'transparent' }}>
       <div className="container">
-        <a href="/" className="navbar-brand">
-          <img src={simbol} alt="Logo" />
-        </a>
-        <div className="navbar-menu">
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <a href="#about">Sobre nós</a>
-            </div>
-            <div className="navbar-item">
-              <a href="#how-works">Como funciona</a>
-            </div>
-            <div className="navbar-item">
-              <a href="#team">Nosso time</a>
-            </div>
-            <div className="navbar-item">
-              <a href="#contact">Contato</a>
-            </div>
+        <div className="columns" style={{ width: '100%' }}>
+          <div className="column">
+            <a className="navbar-brand">
+              <img src={simbol} alt="Logo" />
+            </a>
+          </div>
+          <div className="column" />
+          <div className="column is-3">
+            <button type="button" onClick={() => setModal(true)} className="button is-dark is-fullwidth is-spaced is-uppercase">
+              Entrar em contato
+            </button>
           </div>
         </div>
       </div>

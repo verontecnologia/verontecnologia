@@ -8,25 +8,7 @@ import instagram from '../svgs/instagram.svg';
 export default function Home() {
   return (
     <>
-      <div id="contact" className="hero is-medium is-white">
-        <div className="hero-body">
-          <div className="container">
-            <div className="columns is-multiline is-centered">
-              <div className="column is-8 has-text-centered">
-                <h1 className="title">Interessado em saber como está a sua reputação na internet? Solicite o seu diagnóstico gratuito agora mesmo!</h1>
-              </div>
-            </div>
-            <br />
-            <div className="columns is-centered">
-              <div className="column is-full-mobile is-half-tablet is-3-desktop">
-                <div className="button is-large is-primary is-uppercase">
-                  Entre em contato
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div className="bg-footer" />
       <footer id="footer" className="footer">
         <div className="container">
@@ -41,7 +23,7 @@ export default function Home() {
             </div>
             <div className="column" />
             <div className="column is-3">
-              <div className="columns">
+              <div className="columns is-mobile">
                 {[
                   {
                     url: '#',
@@ -56,7 +38,7 @@ export default function Home() {
                     image: instagram,
                   },
                 ].map((item) => (
-                  <div className="column is-4">
+                  <div className="column is-3">
                     <a href={item.url} rel="no">
                       <img src={item.image} height={23} width={23} alt="" />
                     </a>
