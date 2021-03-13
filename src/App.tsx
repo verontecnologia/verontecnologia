@@ -12,6 +12,7 @@ const Quote = load(() => import('./sections/quote'));
 const Privacity = load(() => import('./sections/privacity'));
 const Footer = load(() => import('./sections/footer'));
 const Modal = load(() => import('./sections/modal'));
+const Loading = load(() => import('./sections/loading'));
 
 const App = () => {
   React.useEffect(() => {
@@ -24,11 +25,32 @@ const App = () => {
   }, []);
 
   const [modal, setModal] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
+  const timeout = React.useRef<NodeJS.Timeout>();
+  const [clock, setClock] = React.useState(0);
+
+  const UNIT = 10;
+  const MAX = 8000;
+
+  React.useEffect(() => {
+    timeout.current = setInterval(() => {
+      setClock((c) => c + UNIT);
+    }, UNIT);
+  }, []);
+
+  React.useEffect(() => {
+    if (clock >= MAX) {
+      clearInterval(timeout.current);
+      setLoading(false);
+    }
+  }, [clock]);
+
 
   return (
     <>
+      <Loading progress={clock} loading={loading} max={MAX} />
       { !modal && <Navbar setModal={setModal} /> }
-      <Home setModal={setModal} />
+      <Home loading={loading} setModal={setModal} />
       <HowWorks />
       <Protect />
       <Steps />

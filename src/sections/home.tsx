@@ -12,9 +12,15 @@ import video from '../videos/bg.mp4';
 
 const Lottie = load(() => import('react-lottie'));
 
-export default function Home({ setModal = (b:boolean) => {} }) {
+export default function Home({ loading = false, setModal = (b:boolean) => {} }) {
   const [active, setActive] = React.useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>();
 
+  React.useEffect(() => {
+    setTimeout(() => {
+      videoRef.current.play();
+    }, 1000);
+  }, [loading]);
 
   const animation = {
     loop: false,
@@ -29,12 +35,13 @@ export default function Home({ setModal = (b:boolean) => {} }) {
 
   return (
     <div id="home" className="hero has-video-background is-fullheight is-dark">
-      <video muted autoPlay loop>
+      <video ref={videoRef} muted autoPlay={false} loop>
         <source src={video} type="video/mp4" />
       </video>
 
       <div className="lottie">
         <Lottie
+          isPaused={loading}
           options={animation}
         />
       </div>

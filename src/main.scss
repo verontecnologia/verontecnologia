@@ -331,3 +331,49 @@ $family-primary: 'Barlow', sans-serif;
     }
   }
 }
+
+#loading {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: 1s;
+
+  &.is-loaded {
+    top: -100vh;
+  }
+
+  .inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 15vh;
+  }
+
+  progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+     appearance: none;
+
+    height: 3px;
+    width: 200%;
+    border-radius: 2px;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    background-color: #304354;
+    border-radius: 2px;
+  }
+
+  progress[value]::-webkit-progress-value {
+    background-color: $primary;
+    border-radius: 2px;
+  }
+}
