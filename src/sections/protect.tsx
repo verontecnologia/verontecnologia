@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import video from '../videos/bg-black2.mp4';
+import video from '../videos/bg-2.mp4';
 import icon from '../svgs/icon-proteja-reputacao.svg';
 
 export default function Protect() {
