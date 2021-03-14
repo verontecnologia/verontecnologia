@@ -16,7 +16,7 @@ function Layout({
             <br />
             <br />
             <div className="title is-uppercase">{title}</div>
-            <p>{descr}</p>
+            <p style={{ fontSize: 20 }}>{descr}</p>
           </div>
         </div>
       </div>

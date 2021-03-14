@@ -25,7 +25,7 @@ const App = () => {
   }, []);
 
   const [modal, setModal] = React.useState(false);
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
   const timeout = React.useRef<NodeJS.Timeout>();
   const [clock, setClock] = React.useState(0);
 

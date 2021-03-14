@@ -56,7 +56,7 @@ export default function Home({ loading = false, setModal = (b:boolean) => {} }) 
               <a
                 onClick={() => setActive(!active)}
                 role="button"
-                className="navbar-burger"
+                className={`navbar-burger2 ${active && 'is-active'}`}
                 aria-label="menu"
                 aria-expanded="false"
                 data-target="navbarBasicExample"
@@ -105,10 +105,10 @@ export default function Home({ loading = false, setModal = (b:boolean) => {} }) 
 
       <div className="hero-foot">
         <div className="container">
-          <div className="more">
+          <a href="#how-works" className="more">
             <div className="arrow" />
             <span>Saiba como</span>
-          </div>
+          </a>
         </div>
       </div>
 

@@ -18,7 +18,7 @@ export default function Steps() {
           <div className="columns is-variable is-8">
             <div className="column is-5">
               <br />
-              <p>
+              <p style={{ fontSize: 25 }}>
                 Através dos planos de contingência e tecnologia de ponta, preparamos estratégias digitais com abordagens multissetoriais para eliminar conteúdos prejudiciais, monitorar o processo, proteger a reputação online do cliente e iniciar o processo de melhoria, encontrando informações de pesquisas com dados especializados e personalizados.
               </p>
             </div>

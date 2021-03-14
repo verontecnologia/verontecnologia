@@ -27,7 +27,7 @@ export default function Protect() {
               <br />
 
               <a href="#contact" className="label">
-                Fale conosco <span style={{ fontSize: 18, opacity: 1 }}>→</span>
+                Fale conosco <span>→</span>
               </a>
             </div>
           </div>

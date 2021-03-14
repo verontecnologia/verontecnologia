@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useEffect } from 'react';
 import simbol from '../svgs/simbol-veron.svg';
+import send from '../svgs/icon-send.svg';
 
 export default function Navbar({ setModal = (b:boolean) => {} }) {
   const [active, setActive] = React.useState(false);
@@ -27,7 +28,10 @@ export default function Navbar({ setModal = (b:boolean) => {} }) {
           <div className="column" />
           <div className="column is-3 is-hidden-mobile">
             <button type="button" onClick={() => setModal(true)} className="button is-dark is-fullwidth is-spaced is-uppercase">
-              Vamos conversar?
+              <img className="icon is-16x16" src={send} alt="" style={{ marginRight: 15 }} />
+              <span>
+                Vamos conversar?
+              </span>
             </button>
           </div>
         </div>

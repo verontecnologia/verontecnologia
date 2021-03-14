@@ -72,8 +72,8 @@ export default function Modal({ onClose = () => {} }) {
                 <span>Conte com a Veron Tecnologia, proteja-se de conteúdos maliciosos e nunca mais se preocupe com crises de reputação online.</span>
                 <br />
                 <br />
-                <a href="https://api.whatsapp.com/send?phone=5511972780777" target="blank" className="title is-5 has-text-primary is-uppercase is-bold">
-                  +55 (11) 98765 4321 <img src={whatsapp} style={{ marginLeft: 15 }} height={14} alt="" />
+                <a href="https://wa.me/5511937771707" target="blank" className="title is-5 has-text-primary is-uppercase is-bold">
+                  +55 (11) 9-3777-1707 <img src={whatsapp} style={{ marginLeft: 15 }} height={14} alt="" />
                 </a> <br />
                 <br />
                 <a href="" className="title is-5 has-text-primary is-uppercase is-bold">contato@verontecnologia.com</a>
