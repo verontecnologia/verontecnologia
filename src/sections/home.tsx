@@ -17,9 +17,11 @@ export default function Home({ loading = false, setModal = (b:boolean) => {} }) 
   const videoRef = React.useRef<HTMLVideoElement>();
 
   React.useEffect(() => {
-    setTimeout(() => {
-      videoRef.current.play();
-    }, 1000);
+    console.log(videoRef.current?.NETWORK_LOADING);
+  }, [videoRef.current]);
+
+  React.useEffect(() => {
+    videoRef.current.play();
   }, [loading]);
 
   const animation = {
@@ -35,7 +37,7 @@ export default function Home({ loading = false, setModal = (b:boolean) => {} }) 
 
   return (
     <div id="home" className="hero has-video-background is-fullheight is-dark">
-      <video ref={videoRef} muted autoPlay={false} loop>
+      <video preload="auto" ref={videoRef} muted autoPlay={false} loop>
         <source src={video} type="video/mp4" />
       </video>
 
