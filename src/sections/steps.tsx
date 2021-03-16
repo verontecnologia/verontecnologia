@@ -10,7 +10,7 @@ const icons = [icon1, icon2, icon3, icon4];
 
 export default function Steps() {
   return (
-    <div className="hero is-medium is-white">
+    <div id="how-works" className="hero is-medium is-white">
       <div className="hero-body">
         <div className="container is-max-widescreen">
           <h1 className="title is-uppercase">Etapas da Gestão</h1>

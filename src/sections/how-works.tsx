@@ -17,7 +17,7 @@ export default function HowWorks() {
   const { observerEntry, elRef } = useObserver({ threshold: 0.1 });
 
   return (
-    <div id="how-works" className="hero is-medium is-white">
+    <div id="about" className="hero is-medium is-white">
       <div className="hero-body">
         <div className="container is-max-widescreen">
           <p className="subtitle">
