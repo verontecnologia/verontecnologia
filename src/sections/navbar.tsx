@@ -21,7 +21,7 @@ export default function Navbar({ setModal = (b:boolean) => {} }) {
       <div className="container">
         <div className="columns" style={{ width: '100%' }}>
           <div className="column">
-            <a className="navbar-brand">
+            <a href="#home" className="navbar-brand">
               <img src={simbol} alt="Logo" />
             </a>
           </div>

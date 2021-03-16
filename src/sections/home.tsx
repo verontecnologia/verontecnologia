@@ -52,7 +52,7 @@ export default function Home({ loading = false, setModal = (b:boolean) => {} }) 
         <nav id="navbar" className="navbar" style={{ background: 'transparent' }}>
           <div className="container">
             <div className="navbar-brand">
-              <a className="navbar-item">
+              <a href="#home" className="navbar-item">
                 <img src={simbol} alt="Logo" />
               </a>
               <a
