@@ -26,7 +26,7 @@ export default function Modal({ onClose = () => {} }) {
               <div className="column">
                 {/* form */}
 
-                <form target="blank" action="https://formspree.io/CONTATO@VERONTECNOLOGIA.COM" method="POST" className="columns is-multiline">
+                <form target="blank" action="https://formspree.io/f/mwkwgykr" method="POST" className="columns is-multiline">
                   {/*  */}
                   <div className="column is-full">
                     <div className="control">
